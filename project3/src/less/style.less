@@ -41,6 +41,14 @@
 html {
 	font-size: 10px;
 }
+a:hover{
+ text-decoration: none;
+}
+button, input, a{
+	&:focus{
+		outline: none;
+	}
+}
 .button {
 	padding: 1rem 3rem;
 	border-radius: 8px;
@@ -49,7 +57,11 @@ html {
 	color: @light;
 	border: none;
 	text-transform: uppercase;
-	
+	transition: all 0.2s;
+	&:hover {
+		cursor: pointer;
+		background-color: darken(@btn-color, 5%)
+	}
 }
 /*typography*/
 section {
@@ -64,6 +76,7 @@ section {
 		margin-top: 10rem;
 		/*заголовок*/
 		h1{
+			margin-top: 0rem;
 			margin-bottom: 4rem;
 			.bold();
 			font-size: 4rem;
@@ -162,10 +175,41 @@ section {
 	&-link {
 			display: inline-block;
 			.bold();
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 			height: 7rem;
 			line-height: 7rem;
 			color: @text;
 		}
 }
-	
+@media (max-width: 991px){
+	.main {
+		background-position: top right;
+	}
+	.phone-block {
+		text-align:center;
+	}
+	.main-content {
+	margin-top: 3rem;	
+	}
+	.main-title {
+		text-align: center;
+		padding-bottom: 3rem;
+	}
+}
+@media (max-width: 767px){
+	.main {
+		background-position: top left;
+	}
+	.phone-block {
+		text-align:center;
+	}
+	.logo {
+		text-align: center;
+	}
+	.wrap-block {
+		text-align: center;
+	}
+	.main-title {
+		margin-top: 13rem;
+	}
+}
